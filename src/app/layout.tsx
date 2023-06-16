@@ -1,8 +1,13 @@
 "use client";
 import "./globals.css";
 
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import ArticleIcon from "@mui/icons-material/Article";
 import CloseIcon from "@mui/icons-material/Close";
+import CodeIcon from "@mui/icons-material/Code";
+import ContactSupportIcon from "@mui/icons-material/ContactSupport";
 import MenuIcon from "@mui/icons-material/Menu";
+import WorkIcon from "@mui/icons-material/Work";
 import { Inter } from "next/font/google";
 import Image from "next/image";
 
@@ -22,18 +27,19 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
   // ヘッダーメニューの情報
   type Props = {
     href: string;
+    icon: JSX.Element;
     pageName: string;
   }[];
 
   const HEADER_LINK: Props = [
-    { href: "tech", pageName: "Tech" },
-    { href: "portfolio", pageName: "Portfolio" },
-    { href: "blog", pageName: "Blog" },
-    { href: "account", pageName: "Account" },
-    { href: "contact", pageName: "Contact" },
+    { href: "tech", icon: <CodeIcon />, pageName: "Tech" },
+    { href: "portfolio", icon: <WorkIcon />, pageName: "Portfolio" },
+    { href: "blog", icon: <ArticleIcon />, pageName: "Blog" },
+    { href: "account", icon: <AccountCircleIcon />, pageName: "Account" },
+    { href: "contact", icon: <ContactSupportIcon />, pageName: "Contact" },
   ];
 
-  // ハンバーガーメニュー
+  // メニュー状態切り替え
   const toggle = () => {
     setHamburger((prevState) => !prevState);
   };
@@ -41,7 +47,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="ja">
       <body className={inter.className}>
-        <header className="fixed left-0 top-0 z-20 flex w-full justify-between border-b-[1px] bg-white px-10 py-5 opacity-80">
+        <header className="fixed left-0 top-0 z-20 flex w-full justify-between border-b-[1px] bg-white py-5 pl-5 pr-3 opacity-80">
           {/* ロゴ */}
           <div className="flex">
             {hamburger === false ? (
@@ -55,15 +61,15 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
             )}
           </div>
 
-          {/* 画面が768px以上の場合、ヘッダーにメニューを表示 */}
-          <div className="mx-20 flex max-md:hidden">
+          {/* 画面が920px以上の場合、ヘッダーにメニューを表示 */}
+          <div className="mx-20 flex max-pc:hidden">
             <ul className="m-auto flex">
               {HEADER_LINK.map((link) => {
                 return (
                   <li key={link.href}>
                     <Link href={link.href}>
-                      <div className="mx-2 p-2 text-gray-800 hover:text-blue-500">
-                        {link.pageName}
+                      <div className="mx-2 rounded-xl  p-2 text-gray-800 hover:text-blue-500 ">
+                        {link.icon} {link.pageName}
                       </div>
                     </Link>
                   </li>
@@ -72,12 +78,12 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
             </ul>
           </div>
 
-          {/* 画面が768px未満の場合、ハンバーガーメニューを表示 */}
-          <div className="visible flex md:hidden" onClick={toggle}>
+          {/* 画面が920px未満の場合、ハンバーガーメニューを表示 */}
+          <div className="visible flex pc:hidden" onClick={toggle}>
             {hamburger ? (
-              <CloseIcon className="m-auto mx-2 h-10 w-10 rounded-3xl px-2 hover:bg-gray-100" />
+              <CloseIcon className="m-auto mx-2 h-10 w-10 rounded-3xl px-2 hover:bg-gray-200" />
             ) : (
-              <MenuIcon className="m-auto mx-2 h-10 w-10 rounded-3xl px-2 hover:bg-gray-100" />
+              <MenuIcon className="m-auto mx-2 h-10 w-10 rounded-3xl px-2 hover:bg-gray-200" />
             )}
           </div>
         </header>
@@ -85,13 +91,13 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
         {/* ハンバーガーメニュークリック時に表示されるメニュー */}
         <div className="h-[81px]"></div>
         {hamburger ? (
-          <nav className="fixed top-0 z-10 h-[100vh] w-full bg-gray-100 pt-[81px] md:hidden">
+          <nav className="fixed top-0 z-10 h-[100vh] w-full bg-gray-200 pt-[81px] pc:hidden">
             <ul className="flex h-full flex-col p-[10vh] text-xl text-gray-700">
               {HEADER_LINK.map((link) => {
                 return (
                   <li key={link.href} className="m-auto hover:text-blue-500">
                     <Link href={link.href} onClick={toggle}>
-                      {link.pageName}
+                      {link.icon} {link.pageName}
                     </Link>
                   </li>
                 );
