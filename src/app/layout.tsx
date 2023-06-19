@@ -155,14 +155,14 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
                   width={100}
                   height={50}
                   alt="logo"
-                  className="my-10 max-xl:my-5 max-md:my-0"
+                  className="my-10 max-xl:my-5"
                 />
               </Link>
             </div>
 
             {/* フッターリンク */}
-            <div className="flex justify-start py-10 max-xl:py-0 max-md:flex-col max-sm:mx-auto">
-              <ul className="mx-7 my-10 max-xl:my-0 max-md:my-3">
+            <div className="flex justify-start py-10 max-xl:py-0 max-sm:mx-auto max-sm:flex-col">
+              <ul className="mx-7 my-10 max-xl:my-0 max-sm:my-3">
                 <li className="pb-3 font-bold">Basic</li>
                 {BASIC.map((data) => {
                   return (
@@ -178,7 +178,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
                 })}
               </ul>
 
-              <ul className="mx-7 my-10 max-xl:mt-0 max-md:my-3">
+              <ul className="mx-7 my-10 max-xl:mt-0 max-sm:my-3">
                 <li className="pb-3 font-bold">Account</li>
                 {ACCOUNT.map((data) => {
                   return (
@@ -194,7 +194,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
                 })}
               </ul>
 
-              <ul className="mx-7 my-10 max-xl:mt-0 max-md:my-3">
+              <ul className="mx-7 my-10 max-xl:mt-0 max-sm:my-3">
                 <li className="pb-3 font-bold">Other</li>
                 {OTHER.map((data) => {
                   return (
@@ -213,7 +213,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
           </div>
 
           {/* コピーライト */}
-          <small className="flex w-full justify-center border-t-[1px] py-2">
+          <small className="flex w-full justify-center border-t-[1px] py-5">
             ©︎ 2023 makoto
           </small>
         </footer>
