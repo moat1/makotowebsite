@@ -80,11 +80,25 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
         <div className="flex">
           {hamburger === false ? (
             <Link href="/">
-              <Image src="/pagelogo.png" width={120} height={80} alt="logo" />
+              <Image
+                src="/pagelogo.png"
+                width={120}
+                height={80}
+                alt="logo"
+                className="h-auto w-auto"
+                priority={true}
+              />
             </Link>
           ) : (
             <Link href="/" onClick={toggle}>
-              <Image src="/pagelogo.png" width={120} height={80} alt="logo" />
+              <Image
+                src="/pagelogo.png"
+                width={120}
+                height={80}
+                alt="logo"
+                className="h-auto w-auto"
+                priority={true}
+              />
             </Link>
           )}
         </div>
@@ -149,7 +163,8 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
                 width={100}
                 height={50}
                 alt="logo"
-                className="my-10 max-xl:my-5"
+                className="my-10 h-auto w-auto max-xl:my-5"
+                priority={true}
               />
             </Link>
           </div>
