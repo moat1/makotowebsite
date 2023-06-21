@@ -150,7 +150,6 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
       ) : null}
 
       {children}
-      <div className="h-[70vh]"></div>
 
       {/* フッター */}
       <footer className="flex flex-col border-t-[1px]">
