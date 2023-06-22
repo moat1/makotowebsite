@@ -11,19 +11,19 @@ import Link from "next/link";
 
 export default function Home() {
   const TECH_LOGO = [
-    { src: "/js.png" },
-    { src: "/ts-logo-128.svg" },
-    { src: "/react-logo.svg" },
-    { src: "/next.svg" },
-    { src: "/vercel.svg" },
-    { src: "/github-mark.svg" },
-    { src: "/Slack-logo-RGB.svg" },
-    { src: "/tailwindcss-logotype.svg" },
+    "/js.png",
+    "/ts-logo-128.svg",
+    "/react-logo.svg",
+    "/next.svg",
+    "/vercel.svg",
+    "/github-mark.svg",
+    "/Slack-logo-RGB.svg",
+    "/tailwindcss-logotype.svg",
   ];
 
   const OTHER_INFO = [
     {
-      href: "/tech",
+      href: "./tech-introduction",
       title: "Technology",
       icon: <CodeIcon className="m-auto flex h-full w-40 animate-pulse text-white" />,
       description: "私が使用できる技術や知っている知識について、具体的に説明しています。",
@@ -95,8 +95,8 @@ export default function Home() {
           {TECH_LOGO.map((data) => {
             return (
               <Image
-                key={data.src}
-                src={data.src}
+                key={data}
+                src={data}
                 width="80"
                 height="80"
                 alt="Tech-logo"
@@ -116,7 +116,7 @@ export default function Home() {
                 key={data.href}
                 className="w-72 rounded-xl border bg-white  shadow-xl hover:border-gray-400 hover:shadow-2xl"
               >
-                <Link href="/tech">
+                <Link href={data.href}>
                   <div className="h-[200px] rounded-tl-xl rounded-tr-xl border-b-[1px] bg-gradient-to-b from-black via-gray-500 to-black">
                     {data.icon}
                   </div>
