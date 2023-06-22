@@ -28,7 +28,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
 
   return (
     <div className="flex w-full gap-5 p-16 max-sm:flex-col max-sm:px-5 max-sm:py-12">
-      <div className="flex h-screen w-56 rounded-3xl bg-gray-100 px-10 py-10 max-sm:h-[250px] max-sm:w-full max-sm:overflow-auto">
+      <div className="flex w-56 rounded-3xl bg-gray-100 px-10 py-10 max-sm:h-[250px] max-sm:w-full max-sm:overflow-auto">
         <ul className="w-full">
           <h1 className="m-3 flex justify-center text-xl font-bold">Navigation</h1>
           <p className="flex justify-center text-sm">下にスクロールできます</p>

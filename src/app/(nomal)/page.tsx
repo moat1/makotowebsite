@@ -32,13 +32,14 @@ export default function Home() {
       href: "/portfolio",
       title: "Portfolio",
       icon: <WorkIcon className="m-auto flex h-full w-40 animate-pulse text-white" />,
-      description: "私が使用できる技術や知っている知識について、具体的に説明しています。",
+      description:
+        "私がこれまでに作成した制作物（主にWebアプリケーション）をまとめています。",
     },
     {
       href: "/blog",
       title: "Blog",
       icon: <ArticleIcon className="m-auto flex h-full w-40 animate-pulse text-white" />,
-      description: "私が使用できる技術や知っている知識について、具体的に説明しています。",
+      description: "主に技術に関する記事を中心に投稿しています。",
     },
     {
       href: "/account",
@@ -46,7 +47,8 @@ export default function Home() {
       icon: (
         <AccountCircleIcon className="m-auto flex h-full w-40 animate-pulse text-white" />
       ),
-      description: "私が使用できる技術や知っている知識について、具体的に説明しています。",
+      description:
+        "私が所有しているSNSのアカウントやGitHubのアカウントがまとめられています。",
     },
     {
       href: "/contact",
@@ -54,13 +56,13 @@ export default function Home() {
       icon: (
         <ContactSupportIcon className="m-auto flex h-full w-40 animate-pulse text-white" />
       ),
-      description: "私が使用できる技術や知っている知識について、具体的に説明しています。",
+      description: "フォームから私に連絡を取ることが出来ます。",
     },
   ];
 
   return (
-    <div>
-      <div className="flex min-h-[30vh] content-center justify-around bg-gray-50  px-10 py-20 max-sm:flex-col">
+    <div className="bg-gradient-to-b from-slate-100 via-white to-slate-100">
+      <div className="flex min-h-[30vh] content-center justify-around px-10 py-20 max-sm:flex-col">
         <div className="my-auto flex  max-sm:mb-10">
           <div className="flex h-32 w-32 justify-center rounded-full border bg-green-200 max-sm:m-auto">
             <Image
@@ -82,7 +84,7 @@ export default function Home() {
           </ul>
         </div>
       </div>
-      <div className="flex min-h-[30vh] py-20 max-sm:flex-col-reverse">
+      <div className="flex min-h-[30vh] max-sm:flex-col-reverse">
         <div className="m-auto flex w-1/2 flex-col justify-center py-16 max-sm:mx-auto max-sm:px-0 max-sm:py-0">
           <h1 className="flex justify-center pb-4 text-2xl font-bold">About</h1>
           <ul className="m-auto mt-0 w-fit px-10">
@@ -91,7 +93,7 @@ export default function Home() {
             <li>ライブラリ/フレームワーク: React, Next.js</li>
           </ul>
         </div>
-        <div className="flex w-1/2 flex-wrap justify-center gap-5 p-10 max-sm:w-full">
+        <div className="y flex w-1/2 flex-wrap justify-center gap-5  p-10 max-sm:w-full">
           {TECH_LOGO.map((data) => {
             return (
               <Image
@@ -107,7 +109,7 @@ export default function Home() {
           })}
         </div>
       </div>
-      <div className="flex min-h-[30vh] flex-col content-center justify-center bg-gray-50 p-10 py-20">
+      <div className="flex min-h-[30vh] flex-col content-center justify-center p-10 py-20">
         <h1 className="flex justify-center pb-8 text-2xl font-bold">Other Information</h1>
         <div className="flex flex-wrap justify-center gap-10">
           {OTHER_INFO.map((data) => {
