@@ -12,7 +12,7 @@ export default function Portfolio() {
     },
   ];
   return (
-    <main className="text-gray-800">
+    <main className="m-auto text-gray-800">
       <div className="px-20 max-sm:px-5">
         <h1 className="flex justify-center p-3 text-xl font-bold text-black">
           Portfolio
