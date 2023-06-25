@@ -4,7 +4,6 @@ import "/src/app/globals.css";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import ArticleIcon from "@mui/icons-material/Article";
 import CodeIcon from "@mui/icons-material/Code";
-import ContactSupportIcon from "@mui/icons-material/ContactSupport";
 import WorkIcon from "@mui/icons-material/Work";
 import Image from "next/image";
 import Link from "next/link";
@@ -49,14 +48,6 @@ export default function Home() {
       ),
       description:
         "私が所有しているSNSのアカウントやGitHubのアカウントがまとめられています。",
-    },
-    {
-      href: "/contact",
-      title: "Contact",
-      icon: (
-        <ContactSupportIcon className="m-auto flex h-full w-40 animate-pulse text-white" />
-      ),
-      description: "フォームから私に連絡を取ることが出来ます。",
     },
   ];
 
