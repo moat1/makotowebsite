@@ -1,4 +1,10 @@
-"use client";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Portfolio",
+  description:
+    "ポートフォリオページです。このページでは私がこれまでに作成した制作物（主にWebアプリケーション）の一覧を見ることが出来ます。",
+};
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (

@@ -8,7 +8,7 @@ export default function Portfolio() {
       image: "/pagelogo.png",
       title: "Makoto Website",
       description:
-        "私のホームページです。どのような技術を扱うことができるのかや私と連絡を取ることが出来ます。",
+        "私のホームページです。どのような技術を扱うことができるのかやその他の情報を知ることが出来ます。",
     },
   ];
   return (

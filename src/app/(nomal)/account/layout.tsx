@@ -1,4 +1,9 @@
-"use client";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Account",
+  description: "このページでは私が所有しているアカウントの一覧をまとめています。",
+};
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
