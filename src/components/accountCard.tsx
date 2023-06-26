@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export default function AccountCard() {
   const TWITTER_URL = String(process.env.NEXT_PUBLIC_TWITTER);
-  const GITHUB_URL = String(process.env.NEXT_PUBLIC_T_GITHUB);
+  const GITHUB_URL = String(process.env.NEXT_PUBLIC_GITHUB);
 
   const ACCOUNT = [
     {
@@ -15,7 +15,7 @@ export default function AccountCard() {
         "flex h-[200px] content-center justify-center w-full rounded-tl-xl rounded-tr-xl border-b-[1px] bg-gradient-to-b from-sky-500 to-sky-200",
       icon: <TwitterIcon className="m-auto h-20 w-20 text-white" />,
       title: "Twitter",
-      description: "私が所有しているアカウントの一覧をまとめています。",
+      description: "私のTwitterアカウントです。",
     },
     {
       href: GITHUB_URL,
@@ -23,7 +23,8 @@ export default function AccountCard() {
         "flex h-[200px] content-center justify-center rounded-tl-xl rounded-tr-xl border-b-[1px] bg-gradient-to-b from-black to-gray-500",
       icon: <GitHubIcon className="m-auto h-20 w-20 text-white" />,
       title: "GitHub",
-      description: "私が所有しているアカウントの一覧をまとめています。",
+      description:
+        "私のGitHubアカウントです。これまでに作成してきたポートフォリオのソースコードを見ることが出来ます。",
     },
   ];
 

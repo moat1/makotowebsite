@@ -1,3 +1,3 @@
 export default function Blog() {
-  return <main className="text-red-500">Blog</main>;
+  return <main>準備中</main>;
 }
