@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 
 export default function AccountCard() {
   const TWITTER_URL = String(process.env.NEXT_PUBLIC_TWITTER);
@@ -35,7 +34,7 @@ export default function AccountCard() {
             key={data.href}
             className="flex h-full w-72 flex-col rounded-xl bg-white  shadow-xl  hover:bg-slate-50 hover:shadow-2xl max-sm:w-60"
           >
-            <Link href={data.href}>
+            <a href={data.href}>
               <Image
                 src={data.src}
                 width={400}
@@ -48,7 +47,7 @@ export default function AccountCard() {
                 <h1 className="flex justify-center p-2 font-bold">{data.title}</h1>
                 <div className="px-2 text-sm">{data.description}</div>
               </div>
-            </Link>
+            </a>
           </div>
         );
       })}

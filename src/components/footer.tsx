@@ -81,9 +81,9 @@ export default function Footer() {
                   key={data.id}
                   className="whitespace-nowrap py-2 text-sm text-gray-600 hover:text-blue-500"
                 >
-                  <Link href={data.href}>
+                  <a href={data.href}>
                     {data.icon} {data.linkName}
-                  </Link>
+                  </a>
                 </li>
               );
             })}
