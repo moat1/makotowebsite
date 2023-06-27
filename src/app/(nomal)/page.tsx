@@ -67,7 +67,7 @@ export default function Home() {
             width={400}
             height={500}
             alt="foto"
-            className="max-sm:minh-[400px]  h-[500px] w-[400px] max-sm:h-[400px] max-sm:w-[240px] max-sm:min-w-[240px]"
+            className="max-sm:minh-[400px]  h-[500px] w-[400px] max-sm:h-[400px] max-sm:w-[320px] max-sm:min-w-[320px]"
             priority={true}
           ></Image>
         </div>
