@@ -3,6 +3,7 @@
 import "/src/app/globals.css";
 
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   const PERSONAL_DATA = [
@@ -143,18 +144,20 @@ export default function Home() {
                 key={data.href}
                 className="flex h-full w-72 flex-col rounded-xl bg-white  shadow-xl  hover:bg-slate-50 hover:shadow-2xl max-sm:w-60"
               >
-                <Image
-                  src={data.src}
-                  width={400}
-                  height={600}
-                  alt="Tech-logo"
-                  className="rounded-t-xl"
-                  priority={true}
-                ></Image>
-                <div className="min-h-32 h-32 w-72 p-2 max-sm:w-60">
-                  <h1 className="flex justify-center p-2 font-bold">{data.title}</h1>
-                  <div className="px-2 text-sm">{data.description}</div>
-                </div>
+                <Link href={data.href}>
+                  <Image
+                    src={data.src}
+                    width={400}
+                    height={600}
+                    alt="Tech-logo"
+                    className="rounded-t-xl"
+                    priority={true}
+                  ></Image>
+                  <div className="min-h-32 h-32 w-72 p-2 max-sm:w-60">
+                    <h1 className="flex justify-center p-2 font-bold">{data.title}</h1>
+                    <div className="px-2 text-sm">{data.description}</div>
+                  </div>
+                </Link>
               </div>
             );
           })}

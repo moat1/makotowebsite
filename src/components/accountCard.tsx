@@ -11,7 +11,7 @@ export default function AccountCard() {
     {
       href: TWITTER_URL,
       className:
-        "flex content-center justify-center h-[236.1px] w-full rounded-tl-xl rounded-tr-xl border-b-[1px] bg-sky-200",
+        "flex content-center justify-center h-[250px] w-full rounded-tl-xl rounded-tr-xl border-b-[1px] bg-sky-200",
       src: "/twitter-logo.svg",
       title: "Twitter",
       description: "私のTwitterアカウントです。",
@@ -19,7 +19,7 @@ export default function AccountCard() {
     {
       href: GITHUB_URL,
       className:
-        "flex content-center justify-center rounded-tl-xl rounded-tr-xl border-b-[1px] bg-gray-200",
+        "flex content-center justify-center h-[250px] rounded-tl-xl rounded-tr-xl border-b-[1px] bg-gray-200",
       src: "/github-mark.svg",
       title: "GitHub",
       description:
