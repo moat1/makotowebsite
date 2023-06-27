@@ -5,9 +5,9 @@ import { Inter } from "next/font/google";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Makoto Web Page",
+  title: "Makoto Website",
   description:
-    "MakotoのWebページです。どのような技術を扱うことができるのかや私と連絡を取ることが出来ます。",
+    "Makotoと申します。文系学部に在籍している大学生で、独学でWebアプリケーション開発（主にフロントエンド）を行っています。",
 };
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
