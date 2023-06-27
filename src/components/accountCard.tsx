@@ -34,7 +34,7 @@ export default function AccountCard() {
             key={data.href}
             className="flex h-full w-72 flex-col rounded-xl bg-white  shadow-xl  hover:bg-slate-50 hover:shadow-2xl max-sm:w-60"
           >
-            <a href={data.href}>
+            <a href={data.href} target="_blank" rel="noopener noreferrer">
               <Image
                 src={data.src}
                 width={400}

@@ -81,7 +81,7 @@ export default function Footer() {
                   key={data.id}
                   className="whitespace-nowrap py-2 text-sm text-gray-600 hover:text-blue-500"
                 >
-                  <a href={data.href}>
+                  <a href={data.href} target="_blank" rel="noopener noreferrer">
                     {data.icon} {data.linkName}
                   </a>
                 </li>
