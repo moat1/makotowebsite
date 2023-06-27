@@ -2,9 +2,7 @@
 
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import ArticleIcon from "@mui/icons-material/Article";
-import CloseIcon from "@mui/icons-material/Close";
 import CodeIcon from "@mui/icons-material/Code";
-import MenuIcon from "@mui/icons-material/Menu";
 import WorkIcon from "@mui/icons-material/Work";
 import Image from "next/image";
 import Link from "next/link";
@@ -79,11 +77,20 @@ export default function Header() {
         </div>
 
         {/* 画面が920px未満の場合、ハンバーガーメニューを表示 */}
-        <div className="visible hpc:hidden" onClick={toggle}>
+        <div
+          className="visible m-0 flex content-center justify-center hpc:hidden"
+          onClick={toggle}
+        >
           {hamburger ? (
-            <CloseIcon className="m-auto mx-2 h-10 w-10 rounded-3xl px-2 hover:bg-gray-200" />
+            <div className="m-auto flex h-8 w-8 flex-col items-center justify-center rounded-full p-5 hover:bg-gray-200">
+              <span className="w-[24px] -rotate-[45deg] border-b-[1.5px] border-gray-700"></span>
+              <span className="w-[24px] rotate-[45deg] border-b-[1.5px] border-gray-700"></span>
+            </div>
           ) : (
-            <MenuIcon className="m-auto mx-2 h-10 w-10 rounded-3xl px-2 hover:bg-gray-200" />
+            <div className="m-auto flex h-8 w-8 flex-col items-center justify-center rounded-full p-5 hover:bg-gray-200">
+              <span className="m-[4px] w-6  border-b-[1.5px] border-gray-700"></span>
+              <span className="m-[4px] w-6  border-b-[1.5px] border-gray-700"></span>
+            </div>
           )}
         </div>
       </header>
