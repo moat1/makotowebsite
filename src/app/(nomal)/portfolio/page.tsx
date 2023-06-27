@@ -14,11 +14,9 @@ export default function Portfolio() {
   return (
     <main className="m-auto text-gray-800">
       <div className="px-20 max-sm:px-5">
-        <h1 className="flex justify-center p-3 text-xl font-bold text-black">
-          Portfolio
-        </h1>
+        <h1 className="flex justify-center p-3 text-3xl text-black">Portfolio</h1>
         <div className="p-10 max-sm:px-5">
-          <h2 className="flex justify-center py-5 font-bold">概要</h2>
+          <h2 className="py-5 text-xl">概要</h2>
           <p>
             このページでは私がこれまでに作成した制作物（主にWebアプリケーション）の一覧を見ることが出来ます。
           </p>
@@ -32,7 +30,7 @@ export default function Portfolio() {
           return (
             <div
               key={data.href}
-              className="w-72 rounded-xl border bg-white  shadow-xl hover:border-gray-400 hover:shadow-2xl"
+              className="w-72 rounded-xl bg-white  shadow-xl hover:shadow-2xl  max-sm:w-60"
             >
               <Link href={data.href}>
                 <div className="flex h-[200px] content-center rounded-tl-xl rounded-tr-xl border-b-[1px] bg-gradient-to-b from-gray-300 to-white ">

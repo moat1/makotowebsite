@@ -1,7 +1,6 @@
 "use client";
 
-import GitHubIcon from "@mui/icons-material/GitHub";
-import TwitterIcon from "@mui/icons-material/Twitter";
+import Image from "next/image";
 import Link from "next/link";
 
 export default function AccountCard() {
@@ -11,20 +10,20 @@ export default function AccountCard() {
   const ACCOUNT = [
     {
       href: TWITTER_URL,
-      bgclass:
-        "flex h-[200px] content-center justify-center w-full rounded-tl-xl rounded-tr-xl border-b-[1px] bg-gradient-to-b from-sky-500 to-sky-200",
-      icon: <TwitterIcon className="m-auto h-20 w-20 text-white" />,
+      className:
+        "flex content-center justify-center h-[236.1px] w-full rounded-tl-xl rounded-tr-xl border-b-[1px] bg-sky-200",
+      src: "/twitter-logo.svg",
       title: "Twitter",
       description: "私のTwitterアカウントです。",
     },
     {
       href: GITHUB_URL,
-      bgclass:
-        "flex h-[200px] content-center justify-center rounded-tl-xl rounded-tr-xl border-b-[1px] bg-gradient-to-b from-black to-gray-500",
-      icon: <GitHubIcon className="m-auto h-20 w-20 text-white" />,
+      className:
+        "flex content-center justify-center rounded-tl-xl rounded-tr-xl border-b-[1px] bg-gray-200",
+      src: "/github-mark.svg",
       title: "GitHub",
       description:
-        "私のGitHubアカウントです。これまでに作成してきたポートフォリオのソースコードを見ることが出来ます。",
+        "私のGitHubアカウントです。ポートフォリオのソースコードを見ることが出来ます。",
     },
   ];
 
@@ -34,11 +33,18 @@ export default function AccountCard() {
         return (
           <div
             key={data.href}
-            className="w-72 rounded-xl border bg-white shadow-xl hover:border-gray-400 hover:shadow-2xl"
+            className="flex h-full w-72 flex-col rounded-xl bg-white  shadow-xl  hover:bg-slate-50 hover:shadow-2xl max-sm:w-60"
           >
             <Link href={data.href}>
-              <div className={data.bgclass}>{data.icon}</div>
-              <div className="p-2">
+              <Image
+                src={data.src}
+                width={400}
+                height={600}
+                alt="Tech-logo"
+                className={data.className}
+                priority={true}
+              ></Image>
+              <div className="min-h-32 h-32 w-72 p-2 max-sm:w-60">
                 <h1 className="flex justify-center p-2 font-bold">{data.title}</h1>
                 <div className="px-2 text-sm">{data.description}</div>
               </div>

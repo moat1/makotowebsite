@@ -23,5 +23,5 @@ export default function TechTitle() {
 
   const pathname = usePathname();
   const title = TECH_NAME.find((data) => data.href.includes(pathname))?.title;
-  return <h1 className="flex justify-center p-5 text-2xl font-bold">{title}</h1>;
+  return <h1 className="flex justify-center p-5 text-3xl">{title}</h1>;
 }

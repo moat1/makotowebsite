@@ -31,7 +31,7 @@ export default function TechNav() {
     <>
       <div className="flex h-[100vh] min-w-[250px] overflow-auto rounded-3xl bg-gray-100 px-10 py-10 max-sm:h-[250px] max-sm:w-full">
         <ul className="w-full">
-          <h1 className="m-3 flex justify-center text-xl font-bold">Navigation</h1>
+          <h1 className="m-3 flex justify-center text-2xl">Navigation</h1>
           <p className="flex justify-center pb-5 text-sm">下にスクロールできます</p>
           {TECH_NAME.map((data) => {
             return (
@@ -41,7 +41,7 @@ export default function TechNav() {
               >
                 <Link href={data.href}>
                   {title === data.title ? (
-                    <span className="font-bold text-black">
+                    <span className="text-xl text-black">
                       {<CircleIcon className="mr-2 h-5 w-5" />}
                       {data.title}
                     </span>

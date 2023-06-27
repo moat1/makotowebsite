@@ -1,11 +1,11 @@
 export default function Privacypolicy() {
   return (
     <main className="m-auto px-20 text-gray-800 max-sm:px-5">
-      <h1 className="flex justify-center p-3 text-3xl font-bold text-black">
+      <h1 className="flex justify-center p-3 text-3xl text-black">
         プライバシーポリシー
       </h1>
       <div className="p-10 max-sm:px-5">
-        <h2 className="flex justify-center py-5 font-bold">概要</h2>
+        <h2 className="py-5 text-xl">概要</h2>
         <p>
           本ウェブサイト上で提供するサービス（以下,「本サービス」といいます。）における，ユーザーの個人情報の取扱いについて，以下のとおりプライバシーポリシー（以下，「本ポリシー」といいます。）を定めます。
         </p>
@@ -67,29 +67,29 @@ export default function Privacypolicy() {
           </li>
           <ul className="ml-5">
             <li className="mb-2">
-              1.
+              a.
               人の生命，身体または財産の保護のために必要がある場合であって，本人の同意を得ることが困難であるとき
             </li>
             <li className="mb-2">
-              2.
+              b.
               公衆衛生の向上または児童の健全な育成の推進のために特に必要がある場合であって，本人の同意を得ることが困難であるとき
             </li>
             <li className="mb-2">
-              3.
+              c.
               国の機関もしくは地方公共団体またはその委託を受けた者が法令の定める事務を遂行することに対して協力する必要がある場合であって，本人の同意を得ることにより当該事務の遂行に支障を及ぼすおそれがあるとき
             </li>
             <li className="mb-2">
-              4.
+              d.
               予め次の事項を告知あるいは公表し，かつ当サイトが個人情報保護委員会に届出をしたとき
             </li>
             <ul className="ml-5">
-              <li className="mb-2">1. 利用目的に第三者への提供を含むこと</li>
-              <li className="mb-2"> 2. 第三者に提供されるデータの項目</li>
-              <li className="mb-2">3. 第三者への提供の手段または方法</li>
+              <li className="mb-2">イ. 利用目的に第三者への提供を含むこと</li>
+              <li className="mb-2"> ロ. 第三者に提供されるデータの項目</li>
+              <li className="mb-2">ハ. 第三者への提供の手段または方法</li>
               <li className="mb-2">
-                4. 本人の求めに応じて個人情報の第三者への提供を停止すること
+                ニ. 本人の求めに応じて個人情報の第三者への提供を停止すること
               </li>
-              <li className="mb-2">5. 本人の求めを受け付ける方法</li>
+              <li className="mb-2">ホ. 本人の求めを受け付ける方法</li>
             </ul>
           </ul>
           <li className="mb-2">
@@ -106,13 +106,13 @@ export default function Privacypolicy() {
           </li>
           <ul className="ml-5">
             <li className="mb-2">
-              1.
+              a.
               本人または第三者の生命，身体，財産その他の権利利益を害するおそれがある場合
             </li>
             <li className="mb-2">
-              2. 当サイトの業務の適正な実施に著しい支障を及ぼすおそれがある場合
+              b. 当サイトの業務の適正な実施に著しい支障を及ぼすおそれがある場合
             </li>
-            <li>3. その他法令に違反することとなる場合</li>
+            <li>c. その他法令に違反することとなる場合</li>
           </ul>
           <li className="mb-2">
             2.
