@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+
 module.exports = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -14,6 +15,18 @@ module.exports = {
       },
       screens: {
         hpc: "920px",
+      },
+      colors: {
+        "nomal-color": "#334155",
+        "strong-color": "#0f172a",
+        "header-footer-link": "#778899",
+        "link-color": "#4682b4",
+        "link-hover-color": "#4682b4b3",
+        "border-color": "#e5e7eb",
+        "sub-color": "#555",
+      },
+      borderColor: {
+        "link-color": "#4682b4b3",
       },
     },
   },
