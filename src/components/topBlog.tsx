@@ -6,7 +6,6 @@ import { getContents } from "@/libs/client";
 
 export async function TopBlog() {
   const data = await getContents();
-  console.log(data.limit);
   const contents = data.contents.slice(0, 3);
 
   return (

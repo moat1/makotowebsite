@@ -10,7 +10,6 @@ type ctxType = {
 
 export default async function BlogId(ctx: ctxType) {
   const abc = await getContents();
-  console.log(abc.limit);
   const contents = abc.contents.slice(0, 5);
 
   const id = ctx.params.id;
