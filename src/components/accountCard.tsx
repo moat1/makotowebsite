@@ -44,7 +44,9 @@ export default function AccountCard() {
                 priority={true}
               ></Image>
               <div className="min-h-32 h-32 w-72 p-2 max-sm:w-60">
-                <h1 className="flex justify-center p-2 font-bold">{data.title}</h1>
+                <h1 className="flex justify-center p-2 font-bold text-strong-color">
+                  {data.title}
+                </h1>
                 <div className="px-2 text-sm">{data.description}</div>
               </div>
             </a>

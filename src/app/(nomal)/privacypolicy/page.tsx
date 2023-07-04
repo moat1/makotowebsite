@@ -1,26 +1,30 @@
 export default function Privacypolicy() {
   return (
-    <main className="m-auto px-20 text-gray-800 max-sm:px-5">
-      <h1 className="flex justify-center p-3 text-3xl text-black">
+    <main className="m-auto px-20 max-sm:px-5">
+      <h1 className="flex justify-center p-3 text-3xl text-strong-color">
         プライバシーポリシー
       </h1>
       <div className="p-10 max-sm:px-5">
-        <h2 className="py-5 text-xl">概要</h2>
+        <h2 className="py-5 text-xl text-strong-color">概要</h2>
         <p>
           本ウェブサイト上で提供するサービス（以下,「本サービス」といいます。）における，ユーザーの個人情報の取扱いについて，以下のとおりプライバシーポリシー（以下，「本ポリシー」といいます。）を定めます。
         </p>
         <br></br>
-        <h2 className="mb-3 text-lg font-bold">第1条（個人情報）</h2>
+        <h2 className="mb-3 text-lg font-bold text-strong-color">第1条（個人情報）</h2>
         <p>
           「個人情報」とは，個人情報保護法にいう「個人情報」を指すものとし，生存する個人に関する情報であって，当該情報に含まれる氏名，生年月日，住所，電話番号，連絡先その他の記述等により特定の個人を識別できる情報及び容貌，指紋，声紋にかかるデータ，及び健康保険証の保険者番号などの当該情報単体から特定の個人を識別できる情報（個人識別情報）を指します。
         </p>
         <br></br>
-        <h2 className="mb-3 text-lg font-bold">第2条（個人情報の収集方法）</h2>
+        <h2 className="mb-3 text-lg font-bold text-strong-color">
+          第2条（個人情報の収集方法）
+        </h2>
         <p>
           当サイトは，ユーザーと提携先などとの間でなされたユーザーの個人情報を含む取引記録や決済に関する情報を,当サイトの提携先（情報提供元，広告主，広告配信先などを含みます。以下，｢提携先｣といいます。）などから収集することがあります。
         </p>
         <br></br>
-        <h2 className="mb-3 text-lg font-bold">第3条（個人情報を収集・利用する目的）</h2>
+        <h2 className="mb-3 text-lg font-bold text-strong-color">
+          第3条（個人情報を収集・利用する目的）
+        </h2>
         <p className="mb-2">
           当サイトが個人情報を収集・利用する目的は，以下のとおりです。
         </p>
@@ -47,7 +51,9 @@ export default function Privacypolicy() {
           <li className="mb-2">7. 上記の利用目的に付随する目的</li>
         </ul>
         <br></br>
-        <h2 className="mb-3 text-lg font-bold">第4条（利用目的の変更）</h2>
+        <h2 className="mb-3 text-lg font-bold text-strong-color">
+          第4条（利用目的の変更）
+        </h2>
         <ul className="mb-2 ml-5">
           <li className="mb-2">
             1.
@@ -59,7 +65,9 @@ export default function Privacypolicy() {
           </li>
         </ul>
         <br></br>
-        <h2 className="mb-3 text-lg font-bold">第5条（個人情報の第三者提供）</h2>
+        <h2 className="mb-3 text-lg font-bold text-strong-color">
+          第5条（個人情報の第三者提供）
+        </h2>
         <ul className="mb-2 ml-5">
           <li className="mb-2">
             1.
@@ -98,7 +106,9 @@ export default function Privacypolicy() {
           </li>
         </ul>
         <br></br>
-        <h2 className="mb-3 text-lg font-bold">第6条（個人情報の開示）</h2>
+        <h2 className="mb-3 text-lg font-bold text-strong-color">
+          第6条（個人情報の開示）
+        </h2>
         <ul className="mb-2 ml-5">
           <li className="mb-2">
             1.
@@ -120,7 +130,9 @@ export default function Privacypolicy() {
           </li>
         </ul>
         <br></br>
-        <h2 className="mb-3 text-lg font-bold">第7条（個人情報の訂正および削除）</h2>
+        <h2 className="mb-3 text-lg font-bold text-strong-color">
+          第7条（個人情報の訂正および削除）
+        </h2>
         <ul className="mb-2 ml-5">
           <li className="mb-2">
             1.
@@ -136,7 +148,9 @@ export default function Privacypolicy() {
           </li>
         </ul>
         <br></br>
-        <h2 className="mb-3 text-lg font-bold">第8条（個人情報の利用停止等）</h2>
+        <h2 className="mb-3 text-lg font-bold text-strong-color">
+          第8条（個人情報の利用停止等）
+        </h2>
         <ul className="mb-2 ml-5">
           <li className="mb-2">
             1.
@@ -156,7 +170,9 @@ export default function Privacypolicy() {
           </li>
         </ul>
         <br></br>
-        <h2 className="mb-3 text-lg font-bold">第9条（プライバシーポリシーの変更）</h2>
+        <h2 className="mb-3 text-lg font-bold text-strong-color">
+          第9条（プライバシーポリシーの変更）
+        </h2>
         <ul className="mb-2 ml-5">
           <li className="mb-2">
             1.
@@ -168,7 +184,9 @@ export default function Privacypolicy() {
           </li>
         </ul>
         <br></br>
-        <h2 className="mb-3 text-lg font-bold">第10条（お問い合わせ窓口）</h2>
+        <h2 className="mb-3 text-lg font-bold text-strong-color">
+          第10条（お問い合わせ窓口）
+        </h2>
         <p>本ポリシーに関するお問い合わせは，下記の窓口までお願いいたします。</p>
         <br></br>
       </div>

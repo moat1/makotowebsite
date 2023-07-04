@@ -1,14 +1,14 @@
 export default function Code() {
   return (
-    <main className="m-auto px-20 text-gray-800 max-sm:px-5">
-      <h1 className="flex justify-center p-3 text-3xl text-black">利用規約</h1>
+    <main className="m-auto px-20 max-sm:px-5">
+      <h1 className="flex justify-center p-3 text-3xl text-strong-color">利用規約</h1>
       <div className="p-10 max-sm:px-5">
-        <h2 className="py-5 text-xl font-bold">概要</h2>
+        <h2 className="py-5 text-xl font-bold text-strong-color">概要</h2>
         <p>
           この利用規約（以下，「本規約」といいます。）は，当サイトが提供するサービス（以下，「本サービス」といいます。）の利用条件を定めるものです。当サイトをご利用の皆さま（以下，「ユーザー」といいます。）には，本規約に従って，本サービスをご利用いただきます。
         </p>
         <br></br>
-        <h2 className="mb-3 text-lg font-bold">第1条（適用）</h2>
+        <h2 className="mb-3 text-lg font-bold text-strong-color">第1条（適用）</h2>
         <ul className="mb-2 ml-5">
           <li className="mb-2">
             1.
@@ -24,7 +24,7 @@ export default function Code() {
           </li>
         </ul>
         <br></br>
-        <h2 className="mb-3 text-lg font-bold">第2条（禁止事項）</h2>
+        <h2 className="mb-3 text-lg font-bold text-strong-color">第2条（禁止事項）</h2>
         <p>ユーザーは，本サービスの利用にあたり，以下の行為をしてはなりません。</p>
         <ul className="mb-2 ml-5">
           <li className="mb-2">1. 法令または公序良俗に違反する行為</li>
@@ -60,7 +60,9 @@ export default function Code() {
           <li className="mb-2">13. その他，当サイトが不適切と判断する行為</li>
         </ul>
         <br></br>
-        <h2 className="mb-3 text-lg font-bold">第3条（本サービスの提供の停止等）</h2>
+        <h2 className="mb-3 text-lg font-bold text-strong-color">
+          第3条（本サービスの提供の停止等）
+        </h2>
         <ul className="mb-2 ml-5">
           <li className="mb-2">
             1.
@@ -87,7 +89,7 @@ export default function Code() {
           </li>
         </ul>
         <br></br>
-        <h2 className="mb-3 text-lg font-bold">第4条（利用制限）</h2>
+        <h2 className="mb-3 text-lg font-bold text-strong-color">第4条（利用制限）</h2>
         <ul className="mb-2 ml-5">
           <li className="mb-2">
             1.
@@ -105,7 +107,9 @@ export default function Code() {
           </li>
         </ul>
         <br></br>
-        <h2 className="mb-3 text-lg font-bold">第5条（保証の否認および免責事項）</h2>
+        <h2 className="mb-3 text-lg font-bold text-strong-color">
+          第5条（保証の否認および免責事項）
+        </h2>
         <ul className="mb-2 ml-5">
           <li className="mb-2">
             1.
@@ -135,12 +139,16 @@ export default function Code() {
           </li>
         </ul>
         <br></br>
-        <h2 className="mb-3 text-lg font-bold">第6条（サービス内容の変更等）</h2>
+        <h2 className="mb-3 text-lg font-bold text-strong-color">
+          第6条（サービス内容の変更等）
+        </h2>
         <p>
           当サイトは，ユーザーへの事前の告知をもって、本サービスの内容を変更、追加または廃止することがあり、ユーザーはこれを承諾するものとします。
         </p>
         <br></br>
-        <h2 className="mb-3 text-lg font-bold">第7条（利用規約の変更）</h2>
+        <h2 className="mb-3 text-lg font-bold text-strong-color">
+          第7条（利用規約の変更）
+        </h2>
         <ul className="mb-2 ml-5">
           <li className="mb-2">
             1.
@@ -161,12 +169,16 @@ export default function Code() {
           </li>
         </ul>
         <br></br>
-        <h2 className="mb-3 text-lg font-bold">第8条（個人情報の取扱い）</h2>
+        <h2 className="mb-3 text-lg font-bold text-strong-color">
+          第8条（個人情報の取扱い）
+        </h2>
         <p>
           当サイトは，本サービスの利用によって取得する個人情報については，当サイト「プライバシーポリシー」に従い適切に取り扱うものとします。
         </p>
         <br></br>
-        <h2 className="mb-3 text-lg font-bold">第9条（準拠法・裁判管轄）</h2>
+        <h2 className="mb-3 text-lg font-bold text-strong-color">
+          第9条（準拠法・裁判管轄）
+        </h2>
         <p>本規約の解釈にあたっては，日本法を準拠法とします。</p>
         <br></br>
       </div>

@@ -31,28 +31,28 @@ export default function Header() {
   ];
   return (
     <>
-      <header className="fixed z-20 flex w-full justify-between border-b-[1px] bg-white px-10 py-5 opacity-95 max-sm:px-5">
+      <header className="fixed z-20 flex w-full justify-between border-b-[1px] bg-white/75 px-10 py-2 backdrop-blur-xl max-sm:px-5">
         {/* ロゴ */}
         <div className="">
           {hamburger === false ? (
             <Link href="/">
               <Image
-                src="/pagelogo.png"
+                src="/sitelogo.png"
                 width={120}
                 height={80}
                 alt="logo"
-                className="h-auto w-auto"
+                className="h-[50px] w-auto"
                 priority={true}
               />
             </Link>
           ) : (
             <Link href="/" onClick={toggle}>
               <Image
-                src="/pagelogo.png"
+                src="/sitelogo.png"
                 width={120}
                 height={80}
                 alt="logo"
-                className="h-auto w-auto"
+                className="h-[50px] w-auto"
                 priority={true}
               />
             </Link>
@@ -61,12 +61,12 @@ export default function Header() {
 
         {/* 画面が920px以上の場合、ヘッダーにメニューを表示 */}
         <div className="mx-20 flex max-hpc:hidden">
-          <ul className="m-auto flex">
+          <ul className="m-auto flex gap-3">
             {HEADER_LINK.map((link) => {
               return (
                 <li key={link.href}>
                   <Link href={link.href}>
-                    <div className="mx-2 p-2 text-gray-600 hover:text-blue-500 ">
+                    <div className="mx-2 box-border h-[42px] w-full py-2 text-header-footer-link hover:border-b-2 hover:border-black hover:text-black">
                       {link.icon} {link.pageName}
                     </div>
                   </Link>
@@ -95,13 +95,13 @@ export default function Header() {
         </div>
       </header>
       {hamburger ? (
-        <nav className="fixed z-10 h-screen w-full bg-gray-200 pt-[81px] hpc:hidden">
-          <ul className="flex h-full flex-col p-[10vh] text-xl text-gray-700">
+        <nav className="fixed z-10 h-screen w-full bg-white pt-[81px] hpc:hidden">
+          <ul className="flex h-full flex-col p-[10vh] text-xl text-header-footer-link">
             {HEADER_LINK.map((link) => {
               return (
-                <li key={link.href} className="m-auto hover:text-blue-500">
+                <li key={link.href} className="m-auto hover:text-black hover:underline">
                   <Link href={link.href} onClick={toggle}>
-                    {link.icon} {link.pageName}
+                    {link.pageName}
                   </Link>
                 </li>
               );

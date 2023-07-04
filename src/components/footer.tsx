@@ -45,7 +45,7 @@ export default function Footer() {
         <div className="mx-10 my-auto flex justify-center">
           <Link href="/">
             <Image
-              src="/pagelogo.png"
+              src="/sitelogo.png"
               width={100}
               height={50}
               alt="logo"
@@ -58,31 +58,29 @@ export default function Footer() {
         {/* フッターリンク */}
         <div className="flex justify-start py-10 max-xl:py-0 max-sm:mx-auto max-sm:flex-col">
           <ul className="mx-7 my-10 max-xl:my-0 max-sm:my-3">
-            <li className="pb-3 font-bold">Basic</li>
+            <li className="pb-3 text-xl text-strong-color">Basic</li>
             {BASIC.map((data) => {
               return (
                 <li
                   key={data.id}
-                  className="whitespace-nowrap py-2 text-sm text-gray-600 hover:text-blue-500"
+                  className="text-md whitespace-nowrap py-2  text-header-footer-link hover:text-black hover:underline"
                 >
-                  <Link href={data.href}>
-                    {data.icon} {data.linkName}
-                  </Link>
+                  <Link href={data.href}>{data.linkName}</Link>
                 </li>
               );
             })}
           </ul>
 
           <ul className="mx-7 my-10 max-xl:mt-0 max-sm:my-3">
-            <li className="pb-3 font-bold">Account</li>
+            <li className="pb-3 text-xl text-strong-color">Account</li>
             {ACCOUNT.map((data) => {
               return (
                 <li
                   key={data.id}
-                  className="whitespace-nowrap py-2 text-sm text-gray-600 hover:text-blue-500"
+                  className="text-md whitespace-nowrap py-2 text-header-footer-link hover:text-black hover:underline"
                 >
                   <a href={data.href} target="_blank" rel="noopener noreferrer">
-                    {data.icon} {data.linkName}
+                    {data.linkName}
                   </a>
                 </li>
               );
@@ -90,16 +88,14 @@ export default function Footer() {
           </ul>
 
           <ul className="mx-7 my-10 max-xl:mt-0 max-sm:my-3">
-            <li className="pb-3 font-bold">Other</li>
+            <li className="pb-3 text-xl text-strong-color">Other</li>
             {OTHER.map((data) => {
               return (
                 <li
                   key={data.id}
-                  className="whitespace-nowrap py-2 text-sm text-gray-600 hover:text-blue-500"
+                  className="text-md whitespace-nowrap py-2 text-header-footer-link hover:text-black hover:underline"
                 >
-                  <Link href={data.href}>
-                    {data.icon} {data.linkName}
-                  </Link>
+                  <Link href={data.href}>{data.linkName}</Link>
                 </li>
               );
             })}

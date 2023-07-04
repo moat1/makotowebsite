@@ -5,18 +5,18 @@ export default function Portfolio() {
   const PORTFOLIO = [
     {
       href: "./",
-      image: "/pagelogo.png",
+      image: "/sitelogo.png",
       title: "Makoto Website",
       description:
         "私のホームページです。どのような技術を扱うことができるのかやその他の情報を知ることが出来ます。",
     },
   ];
   return (
-    <main className="m-auto text-gray-800">
+    <main className="m-auto">
       <div className="px-20 max-sm:px-5">
         <h1 className="flex justify-center p-3 text-3xl text-black">Portfolio</h1>
         <div className="p-10 max-sm:px-5">
-          <h2 className="py-5 text-xl">概要</h2>
+          <h2 className="py-5 text-xl text-strong-color">概要</h2>
           <p>
             このページでは私がこれまでに作成した制作物（主にWebアプリケーション）の一覧を見ることが出来ます。
           </p>
@@ -44,7 +44,9 @@ export default function Portfolio() {
                   ></Image>
                 </div>
                 <div className="p-2">
-                  <h1 className="flex justify-center p-2 font-bold">{data.title}</h1>
+                  <h1 className="flex justify-center p-2 font-bold text-strong-color">
+                    {data.title}
+                  </h1>
                   <div className="px-2 text-sm">{data.description}</div>
                 </div>
               </Link>

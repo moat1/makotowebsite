@@ -31,18 +31,17 @@ export default function TechNav() {
     <>
       <div className="flex h-[100vh] min-w-[250px] overflow-auto rounded-3xl bg-gray-100 px-10 py-10 max-sm:h-[250px] max-sm:w-full">
         <ul className="w-full">
-          <h1 className="m-3 flex justify-center text-2xl">Navigation</h1>
+          <h1 className="m-3 flex justify-center text-2xl text-strong-color">
+            Navigation
+          </h1>
           <p className="flex justify-center pb-5 text-sm">下にスクロールできます</p>
           {TECH_NAME.map((data) => {
             return (
-              <li
-                key={data.href}
-                className="border-b-[1px] py-3 text-gray-600 hover:text-blue-500"
-              >
+              <li key={data.href} className="border-b-[1px] py-3 hover:text-blue-500">
                 <Link href={data.href}>
                   {title === data.title ? (
-                    <span className="text-xl text-black">
-                      {<CircleIcon className="mr-2 h-5 w-5" />}
+                    <span className="text-xl text-strong-color">
+                      {<CircleIcon className="mr-2 h-5 w-5 text-strong-color" />}
                       {data.title}
                     </span>
                   ) : (
