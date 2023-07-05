@@ -37,12 +37,12 @@ export default async function BlogId(ctx: ctxType) {
             公開：{dayjs(data.publishedAt).format("YYYY/MM/DD")}
           </time>
           <div
-            className="px-5 py-10"
+            className="prose px-5 py-10"
             dangerouslySetInnerHTML={{ __html: data.body }}
           ></div>
           <div className="m-auto flex justify-center p-10">
             <Link
-              className="border-2 border-white bg-black p-5 text-white hover:border-black hover:bg-white hover:text-black"
+              className="border-2 border-black bg-black p-5 text-white hover:border-black hover:bg-white hover:text-black"
               href={"/blog"}
             >
               BLOGトップ
