@@ -19,7 +19,7 @@ export default async function Blog() {
             {contents.map((item) => {
               return (
                 <li
-                  className="my-5 w-96 list-none rounded-xl shadow-xl hover:opacity-50 max-sm:w-[245px]"
+                  className="my-5 w-96 list-none rounded-xl border shadow-xl hover:opacity-50 max-sm:w-[245px]"
                   key={item.id}
                 >
                   <Link href={`/blog/${item.id}`}>

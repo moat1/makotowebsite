@@ -15,7 +15,7 @@ export async function TopBlog() {
         {contents.map((item) => {
           return (
             <li
-              className="my-10 w-96 list-none rounded-xl shadow-2xl hover:opacity-50 max-sm:w-[245px] "
+              className="my-10 w-96 list-none rounded-xl border shadow-2xl hover:opacity-50 max-sm:w-[245px] "
               key={item.id}
             >
               <Link href={`/blog/${item.id}`}>

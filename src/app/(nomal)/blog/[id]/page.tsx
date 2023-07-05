@@ -50,7 +50,7 @@ export default async function BlogId(ctx: ctxType) {
           </div>
         </div>
         {/* サイド部分 */}
-        <div className="m-auto w-[450px] py-20 max-lg:m-0 max-lg:w-full">
+        <div className="w-[450px] py-20 max-lg:m-0 max-lg:w-full">
           {/* プロフィール */}
           <div className="flex flex-col justify-center p-5 max-lg:justify-start">
             <Image
