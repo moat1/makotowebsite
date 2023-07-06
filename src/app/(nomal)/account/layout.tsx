@@ -1,8 +1,26 @@
-import { Metadata } from "next";
+const siteName = "Account";
+const description =
+  "アカウントページです。このページでは私が所有しているアカウントの一覧を見ることができます。";
+const url = `${process.env.SITE_DOMAIN}/account`;
 
-export const metadata: Metadata = {
-  title: "Account",
-  description: "このページでは私が所有しているアカウントの一覧をまとめています。",
+export const metadata = {
+  title: siteName,
+  description,
+  openGraph: {
+    title: siteName,
+    description,
+    url,
+    siteName,
+    locale: "ja_JP",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteName,
+    description,
+    site: "@MakotoScript",
+    creator: "@MakotoScript",
+  },
 };
 
 const Layout = ({ children }: { children: React.ReactNode }) => {

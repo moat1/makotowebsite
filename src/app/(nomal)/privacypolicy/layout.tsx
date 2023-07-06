@@ -1,9 +1,26 @@
-import { Metadata } from "next";
+const siteName = "プライバシーポリシー";
+const description =
+  "本ウェブサイト上で提供するサービスにおける，ユーザーの個人情報の取扱いについて，以下のとおりプライバシーポリシーを定めます。";
+const url = `${process.env.SITE_DOMAIN}/privacypolicy`;
 
-export const metadata: Metadata = {
-  title: "プライバシーポリシー",
-  description:
-    "本ウェブサイト上で提供するサービス（以下,「本サービス」といいます。）における，ユーザーの個人情報の取扱いについて，以下のとおりプライバシーポリシー（以下，「本ポリシー」といいます。）を定めます。",
+export const metadata = {
+  title: siteName,
+  description,
+  openGraph: {
+    title: siteName,
+    description,
+    url,
+    siteName,
+    locale: "ja_JP",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteName,
+    description,
+    site: "@MakotoScript",
+    creator: "@MakotoScript",
+  },
 };
 
 const Layout = ({ children }: { children: React.ReactNode }) => {

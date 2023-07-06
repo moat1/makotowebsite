@@ -14,7 +14,7 @@ export default function Sitemap() {
 
   return (
     <main>
-      <h1 className="flex justify-center border-b p-10 text-xl text-strong-color">
+      <h1 className="flex justify-center border-b p-5 text-xl text-strong-color">
         サイトマップ
       </h1>
       <div className="flex flex-col gap-5 p-20">
