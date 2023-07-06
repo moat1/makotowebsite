@@ -1,10 +1,3 @@
-// import { Metadata } from "next";
-
-// export const metadata: Metadata = {
-//   title: "ブログ",
-//   description: "ブログページです。",
-// };
-
 const siteName = "Blog";
 const description =
   "ブログページです。このページではブログ投稿の一覧を見ることができます。";

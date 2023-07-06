@@ -5,7 +5,7 @@ import Header from "../../components/header";
 const siteName = "Makoto Website";
 const description =
   "私は文系学部に在籍している大学生で、独学でWebアプリケーション開発（主にフロントエンド）を行っています。";
-const url = process.env.SITE_DOMAIN;
+const url = `${process.env.SITE_DOMAIN}/`;
 
 export const metadata = {
   title: siteName,
