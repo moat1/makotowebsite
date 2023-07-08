@@ -2,17 +2,26 @@ import dayjs from "dayjs";
 import Image from "next/image";
 import Link from "next/link";
 
-import { client, getContents } from "@/libs/client";
+import { client, getContents } from "@/libs/microcms";
 
-type ctxType = {
-  params: { id: string };
-};
+type paramsType = { params: { id: string } };
 
-export default async function BlogId(ctx: ctxType) {
-  const abc = await getContents();
-  const contents = abc.contents.slice(0, 5);
+// 静的にルートを生成
+export async function generateStaticParams() {
+  const getContentsData = await getContents();
 
-  const id = ctx.params.id;
+  return getContentsData.contents.map((data) => ({
+    id: data.id,
+  }));
+}
+
+export default async function BlogId({ params }: paramsType) {
+  const { id } = params;
+
+  console.log(params);
+
+  const getContentsData = await getContents();
+  const contents = getContentsData.contents.slice(0, 5);
 
   type dataType = {
     publishedAt: string;
@@ -76,7 +85,7 @@ export default async function BlogId(ctx: ctxType) {
               {contents.map((item) => {
                 return (
                   <li
-                    className="my-10 h-28 list-none shadow-2xl hover:opacity-50"
+                    className="my-10 h-28 list-none rounded-xl border shadow-xl hover:opacity-50"
                     key={item.id}
                   >
                     <Link className="flex" href={`/blog/${item.id}`}>

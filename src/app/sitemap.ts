@@ -1,6 +1,6 @@
 import { MetadataRoute } from "next";
 
-import { getContents } from "@/libs/client";
+import { getContents } from "@/libs/microcms";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const data = await getContents();

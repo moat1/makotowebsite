@@ -2,7 +2,7 @@ import dayjs from "dayjs";
 import Image from "next/image";
 import Link from "next/link";
 
-import { getContents } from "@/libs/client";
+import { getContents } from "@/libs/microcms";
 
 export default async function Blog() {
   const data = await getContents();
