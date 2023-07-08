@@ -18,8 +18,6 @@ export async function generateStaticParams() {
 export default async function BlogId({ params }: paramsType) {
   const { id } = params;
 
-  console.log(params);
-
   const getContentsData = await getContents();
   const contents = getContentsData.contents.slice(0, 5);
 

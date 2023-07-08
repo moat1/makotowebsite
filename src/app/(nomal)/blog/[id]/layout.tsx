@@ -15,11 +15,9 @@ export async function generateMetadata(ctx: ctxType) {
 
   const data: dataType = await client.get({ endpoint: "blogs", contentId: id });
 
+  console.log(data.eyecatch.url);
   return {
     title: `[Blog] ${data.title}`,
-    openGraph: {
-      images: data.eyecatch.url,
-    },
   };
 }
 
