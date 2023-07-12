@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function Sitemap() {
   const PAGE = [
     { pageName: "トップページ", path: "/" },
-    { pageName: "技術ページ", path: "/tech-introduction" },
+    { pageName: "技術ページ", path: "/tech" },
     { pageName: "ポートフォリオページ", path: "/portfolio" },
     { pageName: "ブログページ", path: "/blog" },
     { pageName: "アカウントページ", path: "/account" },

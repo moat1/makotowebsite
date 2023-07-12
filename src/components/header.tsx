@@ -24,7 +24,7 @@ export default function Header() {
   }[];
 
   const HEADER_LINK: Props = [
-    { href: "/tech-introduction", icon: <CodeIcon />, pageName: "Tech" },
+    { href: "/tech", icon: <CodeIcon />, pageName: "Tech" },
     { href: "/portfolio", icon: <WorkIcon />, pageName: "Portfolio" },
     { href: "/blog", icon: <ArticleIcon />, pageName: "Blog" },
     { href: "/account", icon: <AccountCircleIcon />, pageName: "Account" },

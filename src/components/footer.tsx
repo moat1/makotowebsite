@@ -14,7 +14,7 @@ import Link from "next/link";
 
 export default function Footer() {
   const BASIC = [
-    { id: 1, href: "/tech-introduction", icon: <CodeIcon />, linkName: "技術" },
+    { id: 1, href: "/tech", icon: <CodeIcon />, linkName: "技術" },
     { id: 2, href: "/portfolio", icon: <WorkIcon />, linkName: "ポートフォリオ" },
     { id: 3, href: "/blog", icon: <ArticleIcon />, linkName: "ブログ" },
     { id: 4, href: "/account", icon: <AccountCircleIcon />, linkName: "アカウント" },

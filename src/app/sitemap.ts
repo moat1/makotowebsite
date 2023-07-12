@@ -15,11 +15,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified,
     },
     {
-      url: `${domain}/tech-introduction`,
-      lastModified,
-    },
-    {
-      url: `${domain}/about`,
+      url: `${domain}/tech`,
       lastModified,
     },
     {

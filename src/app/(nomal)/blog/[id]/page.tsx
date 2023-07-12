@@ -2,6 +2,7 @@ import dayjs from "dayjs";
 import Image from "next/image";
 import Link from "next/link";
 
+import { Btn } from "@/components/Btn";
 import { client, getContents } from "@/libs/microcms";
 
 type paramsType = { params: { id: string } };
@@ -37,24 +38,46 @@ export default async function BlogId({ params }: paramsType) {
       <div className="flex max-lg:flex-col">
         {/* 記事部分 */}
         <div className="w-full">
+          {/* パンくずリスト */}
+          <div className="flex flex-wrap gap-2 p-5 text-sm">
+            <Link
+              href="/"
+              className="text-link-color hover:text-link-hover-color hover:underline"
+            >
+              トップ
+            </Link>
+            <p>{`>`}</p>
+            <Link
+              href={"/blog"}
+              className="text-link-color hover:text-link-hover-color hover:underline"
+            >
+              ブログ
+            </Link>
+            <p>{`>`}</p>
+            <p>{data.title}</p>
+          </div>
+          {/* ブログタイトル */}
           <h1 className="m-0 flex h-auto items-end border-b-[1px] p-5 text-2xl font-extralight">
             {data.title}
           </h1>
+          {/* ブログ公開日 */}
           <time className="m-5 inline-block rounded-3xl bg-green-100 px-5 py-2 text-gray-500">
             公開：{dayjs(data.publishedAt).format("YYYY/MM/DD")}
           </time>
+          {/* ブログ本文 */}
           <div
             className="prose px-5 py-10"
             dangerouslySetInnerHTML={{ __html: data.body }}
           ></div>
-          <div className="m-auto flex justify-center p-10">
+          <Btn href={"/blog"} name={"BLOG TOP"} />
+          {/* <div className="m-auto flex justify-center p-10">
             <Link
               className="border-2 border-black bg-black p-5 text-white hover:border-black hover:bg-white hover:text-black"
               href={"/blog"}
             >
               BLOGトップ
             </Link>
-          </div>
+          </div> */}
         </div>
         {/* サイド部分 */}
         <div className="w-[450px] py-20 max-lg:m-0 max-lg:w-full">
@@ -79,10 +102,10 @@ export default async function BlogId({ params }: paramsType) {
           {/* 新着記事 */}
           <div className="w-full p-5">
             <h2 className="border-b-[1px] text-xl">New Article</h2>
-            <ul className="w-full pt-2">
+            <div className="pt-2">
               {contents.map((item) => {
                 return (
-                  <li
+                  <div
                     className="my-10 h-28 list-none rounded-xl border shadow-xl hover:opacity-50"
                     key={item.id}
                   >
@@ -92,22 +115,22 @@ export default async function BlogId({ params }: paramsType) {
                         width={400}
                         height={400}
                         alt="photo"
-                        className="h-28 w-28"
+                        className="m-2 block h-24 w-24 max-sm:my-4 max-sm:h-20 max-sm:w-20  lg:m-4 lg:h-20 lg:w-20"
                       ></Image>
-                      <div className="w-auto p-3">
-                        <div className="text-[12px] text-sub-color">
+                      <div className="overflow-hidden p-3 ">
+                        <div className="pl-3 text-[12px] text-sub-color max-sm:text-xs lg:text-xs">
                           {dayjs(item.publishedAt).format("YYYY/MM/DD")}
                         </div>
-                        <div className="w-[140px] truncate py-3 text-base text-strong-color">
+                        <div className="truncate p-3 text-base text-strong-color max-sm:text-sm lg:text-sm">
                           {item.title}
                         </div>
-                        <p className="text-sm">Makoto</p>
+                        <p className="pl-3 text-sm max-sm:text-xs lg:text-xs">Makoto</p>
                       </div>
                     </Link>
-                  </li>
+                  </div>
                 );
               })}
-            </ul>
+            </div>
           </div>
         </div>
       </div>

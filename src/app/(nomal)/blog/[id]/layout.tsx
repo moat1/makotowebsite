@@ -10,14 +10,19 @@ export async function generateMetadata(ctx: ctxType) {
 
   type dataType = {
     title: string;
+    body: string;
     eyecatch: { url: string; height: number; width: number };
   };
 
   const data: dataType = await client.get({ endpoint: "blogs", contentId: id });
 
-  console.log(data.eyecatch.url);
   return {
+    // metadataBase: new URL(`${process.env.SITE_DOMAIN}`),
     title: `[Blog] ${data.title}`,
+    description: `${data.body}`,
+    openGraph: {
+      images: "/og-image.png",
+    },
   };
 }
 
