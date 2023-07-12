@@ -1,10 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { LINKS } from "@/util/pageLink";
+
 export function PortfolioCard() {
   const PORTFOLIO = [
     {
-      href: "/",
+      href: LINKS.top,
       image: "/sitelogo.png",
       title: "Makoto Website",
       description:
@@ -17,7 +19,7 @@ export function PortfolioCard() {
         return (
           <div
             key={data.href}
-            className="w-72 rounded-xl bg-white  shadow-xl hover:shadow-2xl  max-sm:w-60"
+            className="w-72 rounded-xl bg-white  shadow-xl hover:opacity-50  max-sm:w-60"
           >
             <Link href={data.href}>
               <div className="flex h-[200px] content-center rounded-tl-xl rounded-tr-xl border-b-[1px] bg-gradient-to-b from-gray-300 to-white ">

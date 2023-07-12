@@ -4,6 +4,7 @@ import Link from "next/link";
 
 import { Btn } from "@/components/Btn";
 import { client, getContents } from "@/libs/microcms";
+import { LINKS } from "@/util/pageLink";
 
 type paramsType = { params: { id: string } };
 
@@ -41,14 +42,14 @@ export default async function BlogId({ params }: paramsType) {
           {/* パンくずリスト */}
           <div className="flex flex-wrap gap-2 p-5 text-sm">
             <Link
-              href="/"
+              href={LINKS.top}
               className="text-link-color hover:text-link-hover-color hover:underline"
             >
               トップ
             </Link>
             <p>{`>`}</p>
             <Link
-              href={"/blog"}
+              href={LINKS.blog}
               className="text-link-color hover:text-link-hover-color hover:underline"
             >
               ブログ
@@ -69,15 +70,7 @@ export default async function BlogId({ params }: paramsType) {
             className="prose px-5 py-10"
             dangerouslySetInnerHTML={{ __html: data.body }}
           ></div>
-          <Btn href={"/blog"} name={"BLOG TOP"} />
-          {/* <div className="m-auto flex justify-center p-10">
-            <Link
-              className="border-2 border-black bg-black p-5 text-white hover:border-black hover:bg-white hover:text-black"
-              href={"/blog"}
-            >
-              BLOGトップ
-            </Link>
-          </div> */}
+          <Btn href={LINKS.blog} name={"BLOG TOP"} />
         </div>
         {/* サイド部分 */}
         <div className="w-[450px] py-20 max-lg:m-0 max-lg:w-full">

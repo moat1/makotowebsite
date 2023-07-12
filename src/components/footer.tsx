@@ -12,18 +12,25 @@ import WorkIcon from "@mui/icons-material/Work";
 import Image from "next/image";
 import Link from "next/link";
 
+import { LINKS } from "@/util/pageLink";
+
 export default function Footer() {
   const BASIC = [
-    { id: 1, href: "/tech", icon: <CodeIcon />, linkName: "技術" },
-    { id: 2, href: "/portfolio", icon: <WorkIcon />, linkName: "ポートフォリオ" },
-    { id: 3, href: "/blog", icon: <ArticleIcon />, linkName: "ブログ" },
-    { id: 4, href: "/account", icon: <AccountCircleIcon />, linkName: "アカウント" },
+    { id: 1, href: LINKS.tech, icon: <CodeIcon />, linkName: "技術" },
+    { id: 2, href: LINKS.portfolio, icon: <WorkIcon />, linkName: "ポートフォリオ" },
+    { id: 3, href: LINKS.blog, icon: <ArticleIcon />, linkName: "ブログ" },
+    { id: 4, href: LINKS.account, icon: <AccountCircleIcon />, linkName: "アカウント" },
   ];
   const ACCOUNT = [
-    { id: 1, href: "https://twitter.com/", icon: <TwitterIcon />, linkName: "Twitter" },
+    {
+      id: 1,
+      href: process.env.NEXT_PUBLIC_TWITTER,
+      icon: <TwitterIcon />,
+      linkName: "Twitter",
+    },
     {
       id: 2,
-      href: "https://github.com/moat1/makotowebsite",
+      href: process.env.NEXT_PUBLIC_GITHUB,
       icon: <GitHubIcon />,
       linkName: "GitHub",
     },
@@ -31,19 +38,19 @@ export default function Footer() {
   const OTHER = [
     {
       id: 1,
-      href: "/privacypolicy",
+      href: LINKS.privacypolicy,
       icon: <VerifiedUserIcon />,
       linkName: "プライバシーポリシー",
     },
-    { id: 2, href: "/code", icon: <GavelIcon />, linkName: "利用規約" },
-    { id: 3, href: "/sitemap", icon: <AccountTreeIcon />, linkName: "サイトマップ" },
+    { id: 2, href: LINKS.code, icon: <GavelIcon />, linkName: "利用規約" },
+    { id: 3, href: LINKS.sitemap, icon: <AccountTreeIcon />, linkName: "サイトマップ" },
   ];
   return (
     <footer className="flex flex-col border-t-[1px]">
       <div className="m-auto flex max-xl:flex-col max-xl:py-10 max-sm:m-0">
         {/* フッターロゴ */}
         <div className="mx-10 my-auto flex justify-center">
-          <Link href="/">
+          <Link href={LINKS.top}>
             <Image
               src="/sitelogo.png"
               width={100}

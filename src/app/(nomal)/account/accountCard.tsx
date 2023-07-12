@@ -3,12 +3,9 @@
 import Image from "next/image";
 
 export default function AccountCard() {
-  const TWITTER_URL = String(process.env.NEXT_PUBLIC_TWITTER);
-  const GITHUB_URL = String(process.env.NEXT_PUBLIC_GITHUB);
-
   const ACCOUNT = [
     {
-      href: TWITTER_URL,
+      href: process.env.NEXT_PUBLIC_TWITTER,
       className:
         "flex content-center justify-center h-[250px] w-full rounded-tl-xl rounded-tr-xl border-b-[1px] bg-sky-200",
       src: "/twitter-logo.svg",
@@ -16,7 +13,7 @@ export default function AccountCard() {
       description: "私のTwitterアカウントです。",
     },
     {
-      href: GITHUB_URL,
+      href: process.env.NEXT_PUBLIC_GITHUB,
       className:
         "flex content-center justify-center h-[250px] rounded-tl-xl rounded-tr-xl border-b-[1px] bg-gray-200",
       src: "/github-mark.svg",

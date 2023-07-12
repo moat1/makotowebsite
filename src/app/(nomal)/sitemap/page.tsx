@@ -1,15 +1,17 @@
 import Link from "next/link";
 
+import { LINKS } from "@/util/pageLink";
+
 export default function Sitemap() {
   const PAGE = [
-    { pageName: "トップページ", path: "/" },
-    { pageName: "技術ページ", path: "/tech" },
-    { pageName: "ポートフォリオページ", path: "/portfolio" },
-    { pageName: "ブログページ", path: "/blog" },
-    { pageName: "アカウントページ", path: "/account" },
-    { pageName: "プライバシーポリシーページ", path: "/privacypolicy" },
-    { pageName: "利用規約ページ", path: "/code" },
-    { pageName: "サイトマップページ", path: "/sitemap" },
+    { pageName: "トップページ", path: LINKS.top },
+    { pageName: "技術ページ", path: LINKS.tech },
+    { pageName: "ポートフォリオページ", path: LINKS.portfolio },
+    { pageName: "ブログページ", path: LINKS.blog },
+    { pageName: "アカウントページ", path: LINKS.account },
+    { pageName: "プライバシーポリシーページ", path: LINKS.privacypolicy },
+    { pageName: "利用規約ページ", path: LINKS.code },
+    { pageName: "サイトマップページ", path: LINKS.sitemap },
   ];
 
   return (

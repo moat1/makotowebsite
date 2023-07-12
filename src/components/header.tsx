@@ -8,6 +8,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
+import { LINKS } from "@/util/pageLink";
+
 export default function Header() {
   const [hamburger, setHamburger] = useState(false);
 
@@ -24,18 +26,18 @@ export default function Header() {
   }[];
 
   const HEADER_LINK: Props = [
-    { href: "/tech", icon: <CodeIcon />, pageName: "Tech" },
-    { href: "/portfolio", icon: <WorkIcon />, pageName: "Portfolio" },
-    { href: "/blog", icon: <ArticleIcon />, pageName: "Blog" },
-    { href: "/account", icon: <AccountCircleIcon />, pageName: "Account" },
+    { href: LINKS.tech, icon: <CodeIcon />, pageName: "Tech" },
+    { href: LINKS.portfolio, icon: <WorkIcon />, pageName: "Portfolio" },
+    { href: LINKS.blog, icon: <ArticleIcon />, pageName: "Blog" },
+    { href: LINKS.account, icon: <AccountCircleIcon />, pageName: "Account" },
   ];
   return (
     <>
       <header className="fixed z-20 flex w-full justify-between border-b-[1px] bg-white/75 px-10 py-2 backdrop-blur-xl max-sm:px-5">
         {/* ロゴ */}
-        <div className="">
+        <div>
           {hamburger === false ? (
-            <Link href="/">
+            <Link href={LINKS.top}>
               <Image
                 src="/sitelogo.png"
                 width={120}
@@ -46,7 +48,7 @@ export default function Header() {
               />
             </Link>
           ) : (
-            <Link href="/" onClick={toggle}>
+            <Link href={LINKS.top} onClick={toggle}>
               <Image
                 src="/sitelogo.png"
                 width={120}
