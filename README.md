@@ -1,34 +1,52 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# MAKOTO WEBSITE
+## サイト紹介
+[サイトのリンクはこちらから](https://makotowebsite.com/)  
+このサイトはサイト製作者である私の個人ホームページです。  
+本サイトを訪れると私に関する様々な情報を知ることができます。例えば、使用できる技術や所有するSNSのアカウント、ブログなどを見ることができます。
+![サイトロゴ](./public/sitelogo.png)
 
-## Getting Started
+## 機能
+### トップページ
+  - プロフィール
+  - 各ページへのリンク
+### 技術ページ
+  私が主に利用することができる技術の一覧を見ることができます。
+### ポートフォリオページ
+   私がこれまでに制作したことのあるサイトを見ることができます。
+### ブログページ
+   私が投稿したブログを見ることができます。
+### アカウントページ
+   私が所有するアカウントの一覧を見ることができます。
 
-First, run the development server:
+使用技術
+### TypeScript
+  今回のサイト制作で初めて使用しました。これまではJavaScriptのみを使った開発をしてきましたが型安全の必要性を知り、今回のプロジェクトで採用することにしました。まだ、完全に使いこなせているわけではありませんが、これまで型をあまり意識をしてこなかったため、苦戦しましたがこれからも使い続けたいと感じました。
+### React
+  Reactの機能としてはコンポーネントやprops、jsx記法などを中心に使いました。Next.jsと重なる部分ではありますが、Reactサーバーコンポーネント（RSC）の概念は今回初めて知り、クライアント側とサーバー川の違いを意識する良いきっかけとなりました。
+### Next.js
+  今回、Next.jsでは新機能のAppRouterを採用しました。まだ、正式版が出たばかりで従来のPagesとどちらを採用すべきか迷いましたが、パフォーマンスの観点（RSCによりクライアントに送るjs量を削減できる）と今後はAppRouterが主流になるという予測よりAppRouterを採用することとなりました。
+### TailwindCSS
+  TailwindCSSはスタイリングの際に直接jsxのタグに書き込める点が直感的で良いと感じ、今回のプロジェクトで初めて採用しました。Reactのようなコンポーネント指向のプロジェクトで使う場合、冗長になりにくく、相性が良いと個人的には思いました。
+### microCMS
+  microCMSはブログの記事投稿に利用するヘッドレスCMSで、microCMSが発行するAPIから様々な情報（記事のタイトル、記事、アイキャッチ画像、タグなど）を取得し、それらを開発環境で加工して利用します。また、ブログは性質上、更新が少ないため、データの取得はビルド時に静的ファイルに変換（SSG）し、更新後初めてのリクエストの際に改めて差分をビルドし直す（revalidateは10秒）レンダリング手法をとっています。
+### Cloudflare
+  Cloudflareでは独自ドメインを取得しました。そのほかのサービスと比較して、価格が一定（支払いは$のみ）であり、安価で独自ドメインを購入することができます。また、VercelでデプロイするためにDNSの設定を行いました。
+### Vercel
+　Vercelはサイトのデプロイに利用しました。また、今回初めて使用した機能として、ページの速さを評価するSpeed InsightsやAPIキーなどの秘密にしたい情報を格納するEnvironment Variablesを利用しました。
+### ESLint
+　ESLintはコードの一貫性を保つためのルールを決めることができ、拡張機能として、importの並び替えや使用していないimportを削除するものを利用しました。
+### Prettier
+　PrettierはコードのフォーマッターでVSCodeのプラグインや設定と併用することで保存時に整ったコードにすることができました。
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+## サイトのこだわり
+### 高速なページ表示
+　本サイトではページ表示の速度向上を目指しています。  そのために行なっている対策の一つ目は全ページの静的ファイル化です。Next.jsでは基本的にページが静的なものとなっていますが、ブログ記事など動的にページを表示させる場合は基本的にはサーバーから情報を取得する必要性が出てきます。そこでビルド時に静的化することにより全てのページを静的ファイルで返すことができるようになり、高速なページを表示することができます。  二つ目はjs量の削減です。使用技術のところでも説明しましたがNext.jsのAppRouterを使用することでクライアントに送るjsの量を削減することができ、ページの高速化につながります。  三つ目は画像の圧縮です。画像はサイトを重くする重要な原因となります。しかし、画像はブログのアイキャッチ画像など様々なところで使われているため、pngやjpg、svgなどで解像度が低くなりすぎないように圧縮し、ページ容量を削減しました。
+### デザイン（レスポンシブ）
+  本サイトはレスポンシブ対応しており、PC・タブレット・スマホのどれを使用しても快適に見ることができます。ヘッダー部分はPC画面時はメニューが表示され、スマホやタブレットの時はハンバーガーメニューを表示しています。
+### デザイン（配色）
+  私はデザインの高度な知識を持っているわけではありませんが、いくつか注意しながらデザインを作りました。  一つ目は多くの色を使いすぎないことです。多くの色を使いすぎると統一感がなくなってしまいます。  二つ目は基本的に赤を使用しないことです。赤は警告など注意が必要なときに使用されるべき色と考えているため、安易に使用しないようにしました。  三つ目は文字の色です。純粋な白と黒はコントラストが強いため、刺激を抑えるためにテキストの文字は若干グレー寄りの黒にしています。
+### SEO
+ReactのようなSPAのサイトはメタ情報をページごとに設置することが難しいため、SEOに弱いという説があります。本サイトではNext.jsの機能を用いてページごとにメタ情報を記述しています。また、サイトマップをサーチコンソールに登録し、検索クローラーにページの存在を伝えています。
+### OGP
+TwitterなどのSNSで使用するOGP画像を設置しています。
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
