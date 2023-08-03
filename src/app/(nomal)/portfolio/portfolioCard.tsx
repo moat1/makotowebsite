@@ -4,10 +4,12 @@ import Link from "next/link";
 import { LINKS } from "@/util/pageLink";
 
 export function PortfolioCard() {
-  const PORTFOLIO = [
+  // PORTFOLIO_CONTENTSは現在、ハードコーディングしているが値の変更の可能性があるため、管理画面作成後に管理画面から値を変更できるようにする。
+  const PORTFOLIO_CONTENTS = [
     {
+      id: crypto.randomUUID(),
       href: LINKS.top,
-      image: "/sitelogo.png",
+      portfolioImage: "/sitelogo.png",
       title: "Makoto Website",
       description:
         "私のホームページです。どのような技術を扱うことができるのかやその他の情報を知ることが出来ます。",
@@ -15,7 +17,7 @@ export function PortfolioCard() {
   ];
   return (
     <div className="my-20 flex flex-wrap justify-center gap-10">
-      {PORTFOLIO.map((data) => {
+      {PORTFOLIO_CONTENTS.map((data) => {
         return (
           <div
             key={data.href}
@@ -24,7 +26,7 @@ export function PortfolioCard() {
             <Link href={data.href}>
               <div className="flex h-[200px] content-center rounded-tl-xl rounded-tr-xl border-b-[1px] bg-gradient-to-b from-gray-300 to-white ">
                 <Image
-                  src={data.image}
+                  src={data.portfolioImage}
                   alt="logo"
                   width={120}
                   height={80}

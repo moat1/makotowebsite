@@ -8,18 +8,20 @@ type ctxType = {
 export async function generateMetadata(ctx: ctxType) {
   const id = ctx.params.id;
 
-  type dataType = {
+  type articleStructureType = {
     title: string;
     body: string;
     eyecatch: { url: string; height: number; width: number };
   };
 
-  const data: dataType = await client.get({ endpoint: "blogs", contentId: id });
+  const articleStructure: articleStructureType = await client.get({
+    endpoint: "blogs",
+    contentId: id,
+  });
 
   return {
-    // metadataBase: new URL(`${process.env.SITE_DOMAIN}`),
-    title: `[Blog] ${data.title}`,
-    description: `${data.body}`,
+    title: `[Blog] ${articleStructure.title}`,
+    description: `${articleStructure.body}`,
     openGraph: {
       images: "/og-image.png",
     },

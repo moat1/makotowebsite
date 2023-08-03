@@ -1,36 +1,41 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { LINKS } from "@/util/pageLink";
+
 export function TopOtherInfo() {
   const OTHER_INFO = [
     {
-      href: "/portfolio",
+      id: crypto.randomUUID(),
+      href: LINKS.portfolio,
       title: "Portfolio",
-      src: "/portfolio-image.png",
+      imageSrc: "/portfolio-image.png",
       description: "私がこれまでに作成した制作物をまとめています。",
     },
     {
-      href: "/account",
+      id: crypto.randomUUID(),
+      href: LINKS.account,
       title: "Account",
-      src: "/account-image.png",
+      imageSrc: "/account-image.png",
       description: "私が所有しているアカウントがまとめられています。",
     },
   ];
+
   return (
     <div className="flex min-h-[30vh] flex-col content-center justify-center px-32 py-10">
       <h1 className="flex justify-center text-3xl font-light text-strong-color">
         Other Information
       </h1>
       <div className="flex flex-wrap justify-around gap-5 py-10">
-        {OTHER_INFO.map((data) => {
+        {OTHER_INFO.map((value) => {
           return (
             <div
-              key={data.href}
+              key={value.id}
               className="flex h-full w-72 flex-col rounded-xl bg-white  shadow-xl  hover:opacity-50 max-sm:w-60"
             >
-              <Link href={data.href}>
+              <Link href={value.href}>
                 <Image
-                  src={data.src}
+                  src={value.imageSrc}
                   width={400}
                   height={600}
                   alt="Tech-logo"
@@ -39,9 +44,9 @@ export function TopOtherInfo() {
                 ></Image>
                 <div className="min-h-32 h-32 w-72 p-2 max-sm:w-60">
                   <h1 className="flex justify-center p-2 font-bold text-strong-color">
-                    {data.title}
+                    {value.title}
                   </h1>
-                  <div className="px-2 text-sm">{data.description}</div>
+                  <div className="px-2 text-sm">{value.description}</div>
                 </div>
               </Link>
             </div>

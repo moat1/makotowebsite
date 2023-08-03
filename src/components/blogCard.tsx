@@ -9,24 +9,27 @@ type Props = {
 };
 
 export async function BlogCard({ length }: Props) {
-  const data = await getContents();
+  // ブログの全データを取得
+  const allBlogData = await getContents();
 
   if (typeof length === undefined) {
     Number(length);
   }
-  const contents = data.contents.slice(0, length);
+
+  // ブログの全データから表示する分だけにブログ数を制限
+  const limitNumberBlogs = allBlogData.contents.slice(0, length);
 
   return (
     <div>
-      {contents.map((item) => {
+      {limitNumberBlogs.map((value) => {
         return (
           <li
             className="my-10 w-96 list-none rounded-xl border shadow-2xl hover:opacity-50 max-sm:w-[245px] "
-            key={item.id}
+            key={value.id}
           >
-            <Link href={`/blog/${item.id}`}>
+            <Link href={`/blog/${value.id}`}>
               <Image
-                src={`${item.eyecatch.url}`}
+                src={`${value.eyecatch.url}`}
                 width={400}
                 height={400}
                 alt="photo"
@@ -34,10 +37,10 @@ export async function BlogCard({ length }: Props) {
               ></Image>
               <div className="p-3">
                 <div className="text-[12px] text-sub-color">
-                  {dayjs(item.publishedAt).format("YYYY/MM/DD")}
+                  {dayjs(value.publishedAt).format("YYYY/MM/DD")}
                 </div>
                 <div className="truncate py-3 text-xl text-strong-color max-sm:w-[230px] max-sm:text-lg">
-                  {item.title}
+                  {value.title}
                 </div>
               </div>
             </Link>

@@ -1,20 +1,44 @@
 import Image from "next/image";
 
 export function TopTechnologyLogo() {
+  // TECH_LOGOは現在、ハードコーディングしているが値の変更の可能性があるため、管理画面作成後に管理画面から値を変更できるようにする。
   const TECH_LOGO = [
-    { src: "/ts-logo-128.svg", url: "https://www.typescriptlang.org/" },
     {
-      src: "/react-logo.svg",
-      url: "https://ja.react.dev/blog/2023/03/16/introducing-react-dev",
+      id: crypto.randomUUID(),
+      logoImageSrc: "/ts-logo-128.svg",
+      techSiteLink: "https://www.typescriptlang.org/",
     },
-    { src: "/next.svg", url: "https://nextjs.org/" },
     {
-      src: "/vercel.svg",
-      url: "https://vercel.com/home?utm_source=next-site&utm_medium=banner&utm_campaign=home",
+      id: crypto.randomUUID(),
+      logoImageSrc: "/react-logo.svg",
+      techSiteLink: "https://ja.react.dev/blog/2023/03/16/introducing-react-dev",
     },
-    { src: "/github-mark.svg", url: "https://github.com/" },
-    { src: "/Slack-logo-RGB.svg", url: "https://slack.com/intl/ja-jp" },
-    { src: "/tailwindcss-logotype.svg", url: "https://tailwindcss.com/" },
+    {
+      id: crypto.randomUUID(),
+      logoImageSrc: "/next.svg",
+      techSiteLink: "https://nextjs.org/",
+    },
+    {
+      id: crypto.randomUUID(),
+      logoImageSrc: "/vercel.svg",
+      techSiteLink:
+        "https://vercel.com/home?utm_source=next-site&utm_medium=banner&utm_campaign=home",
+    },
+    {
+      id: crypto.randomUUID(),
+      logoImageSrc: "/github-mark.svg",
+      techSiteLink: "https://github.com/",
+    },
+    {
+      id: crypto.randomUUID(),
+      logoImageSrc: "/Slack-logo-RGB.svg",
+      techSiteLink: "https://slack.com/intl/ja-jp",
+    },
+    {
+      id: crypto.randomUUID(),
+      logoImageSrc: "/tailwindcss-logotype.svg",
+      techSiteLink: "https://tailwindcss.com/",
+    },
   ];
 
   return (
@@ -22,14 +46,14 @@ export function TopTechnologyLogo() {
       {TECH_LOGO.map((data) => {
         return (
           <a
-            key={data.src}
-            href={data.url}
+            key={data.id}
+            href={data.techSiteLink}
             target="_blank"
             rel="noopener noreferrer"
             className="hover:opacity-50"
           >
             <Image
-              src={data.src}
+              src={data.logoImageSrc}
               width={120}
               height={80}
               alt="foto"

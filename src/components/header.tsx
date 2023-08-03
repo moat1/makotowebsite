@@ -13,28 +13,50 @@ import { LINKS } from "@/util/pageLink";
 export default function Header() {
   const [hamburger, setHamburger] = useState(false);
 
-  // メニュー状態切り替え関数
-  const toggle = () => {
+  // ハンバーガーメニューの状態切り替え関数
+  const toggleHamburgerMenuState = () => {
     return setHamburger((prevState) => !prevState);
   };
 
-  // ヘッダーリンクのデータ
-  type Props = {
+  // ヘッダーリンクのデータ型
+  type HeaderLinkType = {
+    id: string;
     href: string;
     icon: JSX.Element;
     pageName: string;
   }[];
 
-  const HEADER_LINK: Props = [
-    { href: LINKS.tech, icon: <CodeIcon />, pageName: "Tech" },
-    { href: LINKS.portfolio, icon: <WorkIcon />, pageName: "Portfolio" },
-    { href: LINKS.blog, icon: <ArticleIcon />, pageName: "Blog" },
-    { href: LINKS.account, icon: <AccountCircleIcon />, pageName: "Account" },
+  const HEADER_LINK: HeaderLinkType = [
+    {
+      id: crypto.randomUUID(),
+      href: LINKS.tech,
+      icon: <CodeIcon />,
+      pageName: "Tech",
+    },
+    {
+      id: crypto.randomUUID(),
+      href: LINKS.portfolio,
+      icon: <WorkIcon />,
+      pageName: "Portfolio",
+    },
+    {
+      id: crypto.randomUUID(),
+      href: LINKS.blog,
+      icon: <ArticleIcon />,
+      pageName: "Blog",
+    },
+    {
+      id: crypto.randomUUID(),
+      href: LINKS.account,
+      icon: <AccountCircleIcon />,
+      pageName: "Account",
+    },
   ];
+
   return (
     <>
       <header className="fixed z-20 flex w-full justify-between border-b-[1px] bg-white/75 px-10 py-2 backdrop-blur-xl max-sm:px-5">
-        {/* ロゴ */}
+        {/* サイトのロゴ */}
         <div>
           {hamburger === false ? (
             <Link href={LINKS.top}>
@@ -48,7 +70,7 @@ export default function Header() {
               />
             </Link>
           ) : (
-            <Link href={LINKS.top} onClick={toggle}>
+            <Link href={LINKS.top} onClick={toggleHamburgerMenuState}>
               <Image
                 src="/sitelogo.png"
                 width={120}
@@ -64,12 +86,12 @@ export default function Header() {
         {/* 画面が920px以上の場合、ヘッダーにメニューを表示 */}
         <div className="mx-20 flex max-hpc:hidden">
           <ul className="m-auto flex gap-3">
-            {HEADER_LINK.map((link) => {
+            {HEADER_LINK.map((value) => {
               return (
-                <li key={link.href}>
-                  <Link href={link.href}>
-                    <div className="mx-2 box-border h-[42px] w-full py-2 text-header-footer-link hover:border-b-2 hover:border-black hover:text-black">
-                      {link.icon} {link.pageName}
+                <li key={value.id}>
+                  <Link href={value.href}>
+                    <div className="text-header-footer-value mx-2 box-border h-[42px] w-full py-2 hover:border-b-2 hover:border-black hover:text-black">
+                      {value.icon} {value.pageName}
                     </div>
                   </Link>
                 </li>
@@ -81,7 +103,7 @@ export default function Header() {
         {/* 画面が920px未満の場合、ハンバーガーメニューを表示 */}
         <div
           className="visible m-0 flex content-center justify-center hpc:hidden"
-          onClick={toggle}
+          onClick={toggleHamburgerMenuState}
         >
           {hamburger ? (
             <div className="m-auto flex h-8 w-8 flex-col items-center justify-center rounded-full p-5 hover:bg-gray-200">
@@ -96,14 +118,16 @@ export default function Header() {
           )}
         </div>
       </header>
+
+      {/* ハンバーガーメニューの状態がtrue（押されている状態）の時のレイアウト */}
       {hamburger ? (
         <nav className="fixed z-10 h-screen w-full bg-white pt-[81px] hpc:hidden">
           <ul className="flex h-full flex-col p-[10vh] text-xl text-header-footer-link">
-            {HEADER_LINK.map((link) => {
+            {HEADER_LINK.map((value) => {
               return (
-                <li key={link.href} className="m-auto hover:text-black hover:underline">
-                  <Link href={link.href} onClick={toggle}>
-                    {link.pageName}
+                <li key={value.id} className="m-auto hover:text-black hover:underline">
+                  <Link href={value.href} onClick={toggleHamburgerMenuState}>
+                    {value.pageName}
                   </Link>
                 </li>
               );

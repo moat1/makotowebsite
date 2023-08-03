@@ -1,14 +1,5 @@
 "use client";
 
-import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-import AccountTreeIcon from "@mui/icons-material/AccountTree";
-import ArticleIcon from "@mui/icons-material/Article";
-import CodeIcon from "@mui/icons-material/Code";
-import GavelIcon from "@mui/icons-material/Gavel";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import TwitterIcon from "@mui/icons-material/Twitter";
-import VerifiedUserIcon from "@mui/icons-material/VerifiedUser";
-import WorkIcon from "@mui/icons-material/Work";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -16,34 +7,51 @@ import { LINKS } from "@/util/pageLink";
 
 export default function Footer() {
   const BASIC = [
-    { id: 1, href: LINKS.tech, icon: <CodeIcon />, linkName: "技術" },
-    { id: 2, href: LINKS.portfolio, icon: <WorkIcon />, linkName: "ポートフォリオ" },
-    { id: 3, href: LINKS.blog, icon: <ArticleIcon />, linkName: "ブログ" },
-    { id: 4, href: LINKS.account, icon: <AccountCircleIcon />, linkName: "アカウント" },
+    { id: crypto.randomUUID(), href: LINKS.tech, linkName: "技術" },
+    {
+      id: crypto.randomUUID(),
+      href: LINKS.portfolio,
+      linkName: "ポートフォリオ",
+    },
+    {
+      id: crypto.randomUUID(),
+      href: LINKS.blog,
+      linkName: "ブログ",
+    },
+    {
+      id: crypto.randomUUID(),
+      href: LINKS.account,
+      linkName: "アカウント",
+    },
   ];
   const ACCOUNT = [
     {
-      id: 1,
+      id: crypto.randomUUID(),
       href: process.env.NEXT_PUBLIC_TWITTER,
-      icon: <TwitterIcon />,
       linkName: "Twitter",
     },
     {
-      id: 2,
+      id: crypto.randomUUID(),
       href: process.env.NEXT_PUBLIC_GITHUB,
-      icon: <GitHubIcon />,
       linkName: "GitHub",
     },
   ];
   const OTHER = [
     {
-      id: 1,
+      id: crypto.randomUUID(),
       href: LINKS.privacypolicy,
-      icon: <VerifiedUserIcon />,
       linkName: "プライバシーポリシー",
     },
-    { id: 2, href: LINKS.code, icon: <GavelIcon />, linkName: "利用規約" },
-    { id: 3, href: LINKS.sitemap, icon: <AccountTreeIcon />, linkName: "サイトマップ" },
+    {
+      id: crypto.randomUUID(),
+      href: LINKS.code,
+      linkName: "利用規約",
+    },
+    {
+      id: crypto.randomUUID(),
+      href: LINKS.sitemap,
+      linkName: "サイトマップ",
+    },
   ];
   return (
     <footer className="flex flex-col border-t-[1px]">
@@ -66,13 +74,13 @@ export default function Footer() {
         <div className="flex justify-start py-10 max-xl:py-0 max-sm:mx-auto max-sm:flex-col">
           <ul className="mx-7 my-10 max-xl:my-0 max-sm:my-3">
             <li className="pb-3 text-xl text-strong-color">Basic</li>
-            {BASIC.map((data) => {
+            {BASIC.map((value) => {
               return (
                 <li
-                  key={data.id}
+                  key={value.id}
                   className="text-md whitespace-nowrap py-2  text-header-footer-link hover:text-black hover:underline"
                 >
-                  <Link href={data.href}>{data.linkName}</Link>
+                  <Link href={value.href}>{value.linkName}</Link>
                 </li>
               );
             })}
@@ -80,14 +88,14 @@ export default function Footer() {
 
           <ul className="mx-7 my-10 max-xl:mt-0 max-sm:my-3">
             <li className="pb-3 text-xl text-strong-color">Account</li>
-            {ACCOUNT.map((data) => {
+            {ACCOUNT.map((value) => {
               return (
                 <li
-                  key={data.id}
+                  key={value.id}
                   className="text-md whitespace-nowrap py-2 text-header-footer-link hover:text-black hover:underline"
                 >
-                  <a href={data.href} target="_blank" rel="noopener noreferrer">
-                    {data.linkName}
+                  <a href={value.href} target="_blank" rel="noopener noreferrer">
+                    {value.linkName}
                   </a>
                 </li>
               );
@@ -96,13 +104,13 @@ export default function Footer() {
 
           <ul className="mx-7 my-10 max-xl:mt-0 max-sm:my-3">
             <li className="pb-3 text-xl text-strong-color">Other</li>
-            {OTHER.map((data) => {
+            {OTHER.map((value) => {
               return (
                 <li
-                  key={data.id}
+                  key={value.id}
                   className="text-md whitespace-nowrap py-2 text-header-footer-link hover:text-black hover:underline"
                 >
-                  <Link href={data.href}>{data.linkName}</Link>
+                  <Link href={value.href}>{value.linkName}</Link>
                 </li>
               );
             })}

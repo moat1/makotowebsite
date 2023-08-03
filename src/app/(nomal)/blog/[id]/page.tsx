@@ -10,20 +10,20 @@ type paramsType = { params: { id: string } };
 
 // 静的にルートを生成
 export async function generateStaticParams() {
-  const getContentsData = await getContents();
+  const allBlogData = await getContents();
 
-  return getContentsData.contents.map((data) => ({
-    id: data.id,
+  return allBlogData.contents.map((value) => ({
+    id: value.id,
   }));
 }
 
 export default async function BlogId({ params }: paramsType) {
   const { id } = params;
 
-  const getContentsData = await getContents();
-  const contents = getContentsData.contents.slice(0, 5);
+  const allBlogData = await getContents();
+  const contents = allBlogData.contents.slice(0, 5);
 
-  type dataType = {
+  type articleDataType = {
     publishedAt: string;
     title: string;
     createdAt: string;
@@ -32,7 +32,10 @@ export default async function BlogId({ params }: paramsType) {
     eyecatch: { url: string; height: number; width: number };
   };
 
-  const data: dataType = await client.get({ endpoint: "blogs", contentId: id });
+  const articleData: articleDataType = await client.get({
+    endpoint: "blogs",
+    contentId: id,
+  });
 
   return (
     <div className="w-full">
@@ -55,20 +58,20 @@ export default async function BlogId({ params }: paramsType) {
               ブログ
             </Link>
             <p>{`>`}</p>
-            <p>{data.title}</p>
+            <p>{articleData.title}</p>
           </div>
           {/* ブログタイトル */}
           <h1 className="m-0 flex h-auto items-end border-b-[1px] p-5 text-2xl font-extralight">
-            {data.title}
+            {articleData.title}
           </h1>
           {/* ブログ公開日 */}
           <time className="m-5 inline-block rounded-3xl bg-green-100 px-5 py-2 text-gray-500">
-            公開：{dayjs(data.publishedAt).format("YYYY/MM/DD")}
+            公開：{dayjs(articleData.publishedAt).format("YYYY/MM/DD")}
           </time>
           {/* ブログ本文 */}
           <div
             className="prose px-5 py-10"
-            dangerouslySetInnerHTML={{ __html: data.body }}
+            dangerouslySetInnerHTML={{ __html: articleData.body }}
           ></div>
           <Btn href={LINKS.blog} name={"BLOG TOP"} />
         </div>
